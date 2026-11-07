@@ -40,7 +40,7 @@
     const esc = s => String(s ?? "").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
     const initials = s => (s||"S").trim().split(/\s+/).slice(0,2).map(x=>x[0]).join("").toUpperCase();
     let db=null, user=null, profile=null, currentPage="home", feedTab="for_you", feedRows=[], observer=null, activeVideo=null, uploadFile=null, theme="dark";
-    const configured = !CONFIG.SUPABASE_URL.includes("YOUR-PROJECT") && !CONFIG.SUPABASE_ANON_KEY.includes("YOUR_");
+    const configured = !CONFIG.SUPABASE_URL.includes("https://vbtxdouiuctnhucqqvhc.supabase.co") && !CONFIG.SUPABASE_ANON_KEY.includes("sb_publishable_tE-E2M0jnVFHskin7Ycteg_CytN4Tb3");
     const toast = msg => {const el=$("#toast");el.textContent=msg;el.classList.remove("hidden");clearTimeout(toast.t);toast.t=setTimeout(()=>el.classList.add("hidden"),3200)};
     const avatar = (url,name,cls="avatar") => url ? `<img class="${cls}" src="${esc(url)}" alt="" loading="lazy">` : `<div class="${cls}">${esc(initials(name))}</div>`;
     const fmt = n => Intl.NumberFormat("id-ID",{notation:n>9999?"compact":"standard",maximumFractionDigits:1}).format(n||0);
